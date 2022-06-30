@@ -4,17 +4,12 @@
     {
         static void Main(string[] args)
         {
-            int age;
-            int phoneNumber;
-            float waistGirth;
-            byte height;
-            char sex;
-            bool isOpen;
-            string name;
-            double seconds;
-            bool isEnoughMoney;
-            int score;
-            string work;
+            string nameOfUser;
+            int ageOfUser;
+            string zodiacSign;
+            string workOfUser;
+            Console.WriteLine("Здравствуйте! Как Вас зовут? : ")
+            string nameOfUser = Convert.ToString(Console.Readline);
         }
     }
 }
