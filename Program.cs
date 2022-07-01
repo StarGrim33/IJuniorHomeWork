@@ -5,20 +5,31 @@ namespace JuniorHomeWork
         static void Main(string[] args)
         {
             int moneyOfUser;
-            int priceOfOneCristall = 10;
+            int priceOfOneCristall = 1;
             string approvalOfDeal = "да";
-            Console.WriteLine("Приветствуем Вас в нашем магазине кристаллов, сколько золота Вы готовы потратить на покупку ? : ");
+            int countOfUserCrystalls;
+            Console.WriteLine($"Приветствуем Вас в нашем магазине кристаллов, один кристалл стоит {priceOfOneCristall} серебренников, " +
+                $"сколько у Вас золотых ? : ");
             moneyOfUser = Convert.ToInt32(Console.ReadLine());
-            if (moneyOfUser >= 10)
+
+            if (moneyOfUser >= 50)
             {
-                Console.WriteLine("Предлагаем Вам приобрести 10 кристаллов по акционной цене 10 серебренников, напишите да или нет : ");
+                Console.WriteLine($"Предлагаем Вам приобрести {moneyOfUser} кристаллов, Вы согласны? Напишите да или нет : ");
                 approvalOfDeal = Console.ReadLine();
+
                 if (approvalOfDeal == "да")
                 {
-                    moneyOfUser -= priceOfOneCristall * 10;
-                    Console.WriteLine($"Теперь у Вас 10 кристаллов и {moneyOfUser} серебренников");
+                    moneyOfUser -= priceOfOneCristall * moneyOfUser;
+                    Console.WriteLine($"Вы купили {moneyOfUser} кристаллов, у Вас осталось {moneyOfUser} серебренников");
                 }
-                
+
+                else 
+                {
+                    Console.WriteLine("Какое Ваше предложение? Сколько кристаллов Вы хотите купить?: ");
+                    countOfUserCrystalls = Convert.ToInt32(Console.ReadLine());
+                    moneyOfUser -= priceOfOneCristall * countOfUserCrystalls;
+                    Console.WriteLine($"Вы приобрели {countOfUserCrystalls} кристаллов, у Вас осталось {moneyOfUser} серебренников");
+                }
             } 
             }
         }
