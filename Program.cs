@@ -4,17 +4,19 @@ namespace JuniorHomeWork
     {
         static void Main(string[] args)
         {
-            int countOfOutput;
-            string userOutput;
-            Console.WriteLine("Какое сообщение Вы хотите вывести?: ");
-            userOutput = Console.ReadLine();
-            Console.WriteLine("Сколько раз нужно его вывести?: ");
-            countOfOutput = Convert.ToInt32(Console.ReadLine());
+            string stopWord;
 
-            for (int i = 0; i < countOfOutput; i++)
+            while (true)
             {
-                Console.WriteLine(userOutput);
+                Console.WriteLine("Напишите стоп слово - quit");
+                stopWord = Console.ReadLine();
+
+                if (stopWord == "quit")
+                {
+                    break;
+                }
             }
+            Console.WriteLine("Цикл остановлен!");
         }
     }
 }
