@@ -8,11 +8,11 @@ namespace JuniorHomeWork
             int timePerPacient = 10;
             int estimatedTimeHours;
             int estimatedTimeMinutes;
-
+            int minutesPerHour = 60;
             Console.WriteLine("Введите количество старушек в очереди: ");
             pateintInQueue = Convert.ToInt32(Console.ReadLine());
-            estimatedTimeHours = (timePerPacient * pateintInQueue) / 60;
-            estimatedTimeMinutes = (timePerPacient * pateintInQueue) % 60;
+            estimatedTimeHours = (timePerPacient * pateintInQueue) / minutesPerHour;
+            estimatedTimeMinutes = (timePerPacient * pateintInQueue) % minutesPerHour;
 
             Console.WriteLine($"Время ожидания в очереди составляет {estimatedTimeHours} часа и {estimatedTimeMinutes} минут");
         }
