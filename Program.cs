@@ -4,17 +4,17 @@ namespace JuniorHomeWork
     {
         static void Main(string[] args)
         {
-            int pateintInQueue;
-            int timePerPacient = 10;
-            int estimatedTimeHours;
-            int estimatedTimeMinutes;
-            int minutesPerHour = 60;
-            Console.WriteLine("Введите количество старушек в очереди: ");
-            pateintInQueue = Convert.ToInt32(Console.ReadLine());
-            estimatedTimeHours = (timePerPacient * pateintInQueue) / minutesPerHour;
-            estimatedTimeMinutes = (timePerPacient * pateintInQueue) % minutesPerHour;
+            int countOfOutput;
+            string userOutput;
+            Console.WriteLine("Какое сообщение Вы хотите вывести?: ");
+            userOutput = Console.ReadLine();
+            Console.WriteLine("Сколько раз нужно его вывести?: ");
+            countOfOutput = Convert.ToInt32(Console.ReadLine());
 
-            Console.WriteLine($"Время ожидания в очереди составляет {estimatedTimeHours} часа и {estimatedTimeMinutes} минут");
+            for (int i = 0; i < countOfOutput; i++)
+            {
+                Console.WriteLine(userOutput);
+            }
         }
     }
 }
