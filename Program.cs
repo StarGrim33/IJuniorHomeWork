@@ -27,11 +27,13 @@ namespace JuniorHomeWork
                 {
                     Console.WriteLine("Какое Ваше предложение? Сколько кристаллов Вы хотите купить?: ");
                     countOfUserCrystalls = Convert.ToInt32(Console.ReadLine());
+                    
                     if (countOfUserCrystalls <= moneyOfUser)
                     {
                         moneyOfUser -= priceOfOneCrystall * countOfUserCrystalls;
                         Console.WriteLine($"Вы приобрели {countOfUserCrystalls} кристаллов, у Вас осталось {moneyOfUser} серебренников");
                     }
+                    
                     else if (countOfUserCrystalls > moneyOfUser)
                     {
 
