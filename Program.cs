@@ -5,16 +5,18 @@ namespace JuniorHomeWork
         static void Main(string[] args)
         {
             string stopWord;
+            int age = 0;
 
-            for (int i = 0; i < 100; i++)
+            while (age < 100)
             {
                 Console.WriteLine("Напишите стоп слово - quit");
                 stopWord = Console.ReadLine();
 
                 if (stopWord == "quit")
                 {
-                    i = 100;
+                    age = 100;
                 }
+
             }
             Console.WriteLine("Цикл остановлен!");
         }
