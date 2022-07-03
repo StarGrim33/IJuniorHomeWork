@@ -4,15 +4,11 @@ namespace JuniorHomeWork
     {
         static void Main(string[] args)
         {
-            string stopWord = "exit";
-            string userInput = "";
 
-            while (stopWord != userInput)
+            for (int age = 5; age <= 96; age += 7)
             {
-                Console.WriteLine($"Напишите стоп слово {stopWord}");
-                userInput = (Console.ReadLine());
+                Console.WriteLine(age);
             }
-
         }
     }
 }
