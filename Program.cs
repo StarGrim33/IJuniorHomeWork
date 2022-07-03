@@ -4,12 +4,13 @@ namespace JuniorHomeWork
     {
         static void Main(string[] args)
         {
-            string stopWord = "quit";
+            string stopWord = "exit";
+            string userInput = "";
 
-            while (stopWord != "exit")
+            while (stopWord != userInput)
             {
-                Console.WriteLine("Напишите стоп слово - exit");
-                stopWord = Convert.ToString(Console.ReadLine());
+                Console.WriteLine($"Напишите стоп слово {stopWord}");
+                userInput = (Console.ReadLine());
             }
 
         }
