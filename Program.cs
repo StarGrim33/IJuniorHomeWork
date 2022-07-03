@@ -4,10 +4,12 @@ namespace JuniorHomeWork
     {
         static void Main(string[] args)
         {
-
-            for (int age = 5; age <= 96; age += 7)
+            int lowerNumber = 5;
+            int highestNumber = 96;
+            int step = 7;
+            for (int i = lowerNumber; i <= highestNumber; i +=step)
             {
-                Console.WriteLine(age);
+                Console.WriteLine(i);
             }
         }
     }
