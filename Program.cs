@@ -4,28 +4,81 @@ namespace JuniorHomeWork
     {
         static void Main(string[] args)
         {
-            Random random = new Random();
-            int firstPositiveNumber = 3;
-            int secondPositiveNumber = 5;
-            int sumOfNumbers = 0;
-            int minNumber = 0;
-            int maxNumber = 100;
-            int randomNumber = random.Next(minNumber, maxNumber);
+            float rub;
+            float usd;
+            float eur;
+            string userInput;
+            float currencyCount;
 
-            Console.WriteLine("Случайное число равно: " + randomNumber);
-            Console.ReadLine();
-            
-            for (int i = 0; i <= randomNumber; i++)
+            int rubToUsd = 68;
+            int rubToEur = 75;
+            float usdToEur = 0.95f;
+
+            Console.WriteLine("Приветствуем Вас в нашем обменнике валют, пожалуйста, введите количество рублей: ");
+            rub = Convert.ToSingle(Console.ReadLine());
+            Console.WriteLine("Пожалуйста, введите количество долларов: ");
+            usd = Convert.ToInt32(Console.ReadLine());
+            Console.WriteLine("Пожалуйста, введите количество евро: ");
+            eur = Convert.ToSingle(Console.ReadLine());
+
+            Console.WriteLine("Выберите какая операция Вас интересует: ");
+            Console.WriteLine("1 - обмен рублей на доллары");
+            Console.WriteLine("2 - обмен рублей на евро");
+            Console.WriteLine("3 - обмен долларов на евро");
+
+            userInput = Console.ReadLine();
+
+            switch (userInput)
             {
-                if (i % firstPositiveNumber == 0 || i % secondPositiveNumber == 0)
-                {
-                    sumOfNumbers += i;
-                }
-            }
+                case "1":
+                    Console.WriteLine("Обмен рублей на доллары");
+                    Console.WriteLine("Сколько рублей Вы хотите обменять ? ");
+                    currencyCount = Convert.ToSingle(Console.ReadLine());
 
-            Console.WriteLine("Сумма всех положительных чисел меньше " + randomNumber + " и кратных числам " 
-                + firstPositiveNumber + " и " + secondPositiveNumber + " равна: " + sumOfNumbers);
-            Console.ReadLine();
+                    if (rub >= currencyCount)
+                    {
+                        rub -= currencyCount;
+                        usd += currencyCount / rubToUsd;
+                    }
+                    else
+                    {
+                        Console.WriteLine("Вы ввели некорректное количество рублей");
+                    }
+                    break;
+
+                case "2":
+                    Console.WriteLine("Обмен рублей на евро");
+                    Console.WriteLine("Сколько рублей Вы хотите обменять ? ");
+                    currencyCount = Convert.ToSingle(Console.ReadLine());
+
+                    if (rub >= currencyCount)
+                    {
+                        rub -= currencyCount;
+                        eur += currencyCount / rubToEur;
+                    }
+                    else
+                    {
+                        Console.WriteLine("Вы ввели некорректное количество рублей");
+                    }
+                    break;
+
+                case "3":
+                    Console.WriteLine("Обмен долларов на евро");
+                    Console.WriteLine("Сколько долларов Вы хотите обменять ? ");
+                    currencyCount = Convert.ToSingle(Console.ReadLine());
+
+                    if (usd >= currencyCount)
+                    {
+                        usd -= currencyCount;
+                        usd -= currencyCount / usdToEur;
+                    }
+                    else
+                    {
+                        Console.WriteLine("Вы ввели некорректное количество долларов");
+                    }
+                    break;
+            }
+                    Console.WriteLine("На Вашем балансе: " + rub + " рублей, " + usd + " долларов и " + eur + " евро.");
+            }
         }
     }
-}
