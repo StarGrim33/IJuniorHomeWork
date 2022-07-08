@@ -35,9 +35,9 @@ namespace JuniorHomeWork
 
             userInput = Convert.ToString(Console.ReadLine());
 
-            bool done = false;
+            bool isProgramDone = false;
             int esc;
-            while (!done)
+            while (isProgramDone == false)
             {
                 switch (userInput)
                 {
@@ -55,27 +55,27 @@ namespace JuniorHomeWork
                             esc = Convert.ToInt32(Console.ReadLine());
                             if (esc == 1)
                             {
-                                done = true;
+                                isProgramDone = true;
                             }
                         }
-                        if (userChoice == 2)
+                        else if (userChoice == 2)
                         {
                             Console.WriteLine("Количество серверных машин в модуле Бетта - " + moduleBetta);
                             Console.WriteLine("Нажмите 1 для выхода из программы или другую кнопку для повторения");
                             esc = Convert.ToInt32(Console.ReadLine());
                             if (esc == 1)
                             {
-                                done = true;
+                                isProgramDone = true;
                             }
                         }
-                        if (userChoice == 3)
+                        else if(userChoice == 3)
                         {
                             Console.WriteLine("Количество серверных машин в модуле Бетта - " + moduleGamma);
                             Console.WriteLine("Нажмите 1 для выхода из программы или 2 для повторения");
                             esc = Convert.ToInt32(Console.ReadLine());
                             if (esc == 1)
                             {
-                                done = true;
+                                isProgramDone = true;
                             };
                         }
                         break;
@@ -100,7 +100,7 @@ namespace JuniorHomeWork
                             esc = Convert.ToInt32(Console.ReadLine());
                             if (esc == 1)
                             {
-                                done = true;
+                                isProgramDone = true;
                             };
                         }
                         else if (userChoice == 2)
@@ -118,7 +118,7 @@ namespace JuniorHomeWork
                             esc = Convert.ToInt32(Console.ReadLine());
                             if (esc == 1)
                             {
-                                done = true;
+                                isProgramDone = true;
                             };
                         }
                         else if (userChoice == 3)
@@ -136,7 +136,7 @@ namespace JuniorHomeWork
                             esc = Convert.ToInt32(Console.ReadLine());
                             if (esc == 1)
                             {
-                                done = true;
+                                isProgramDone = true;
                             };
                         }
                         else
@@ -157,7 +157,7 @@ namespace JuniorHomeWork
                             esc = Convert.ToInt32(Console.ReadLine());
                             if (esc == 1)
                             {
-                                done = true;
+                                isProgramDone = true;
                             };
                         }
                         else if (userChoice == 2)
@@ -168,7 +168,7 @@ namespace JuniorHomeWork
                             esc = Convert.ToInt32(Console.ReadLine());
                             if (esc == 1)
                             {
-                                done = true;
+                                isProgramDone = true;
                             };
                         }
                         else if (userChoice == 3)
@@ -179,7 +179,7 @@ namespace JuniorHomeWork
                             esc = Convert.ToInt32(Console.ReadLine());
                             if (esc == 1)
                             {
-                                done = true;
+                                isProgramDone = true;
                             };
                         }
                         break;
@@ -198,10 +198,10 @@ namespace JuniorHomeWork
                             esc = Convert.ToInt32(Console.ReadLine());
                             if (esc == 1)
                             {
-                                done = true;
+                                isProgramDone = true;
                             };
                         }
-                        if (userChoice == 2)
+                        else if (userChoice == 2)
                         {
                             Console.Clear();
                             Console.BackgroundColor = ConsoleColor.Blue;
@@ -212,10 +212,10 @@ namespace JuniorHomeWork
                             esc = Convert.ToInt32(Console.ReadLine());
                             if (esc == 1)
                             {
-                                done = true;
+                                isProgramDone = true;
                             };
                         }
-                        if (userChoice == 3)
+                        else if (userChoice == 3)
                         {
                             Console.Clear();
                             Console.BackgroundColor = ConsoleColor.Green;
@@ -226,10 +226,10 @@ namespace JuniorHomeWork
                             esc = Convert.ToInt32(Console.ReadLine());
                             if (esc == 1)
                             {
-                                done = true;
+                                isProgramDone = true;
                             };
                         }
-                        if (userChoice == 4)
+                        else if (userChoice == 4)
                         {
                             Console.Clear();
                             Console.BackgroundColor = ConsoleColor.Yellow;
@@ -240,10 +240,10 @@ namespace JuniorHomeWork
                             esc = Convert.ToInt32(Console.ReadLine());
                             if (esc == 1)
                             {
-                                done = true;
+                                isProgramDone = true;
                             };
                         }
-                        if (userChoice == 5)
+                        else if (userChoice == 5)
                         {
                             Console.Clear();
                             Console.BackgroundColor = ConsoleColor.White;
@@ -254,13 +254,13 @@ namespace JuniorHomeWork
                             esc = Convert.ToInt32(Console.ReadLine());
                             if (esc == 1)
                             {
-                                done = true;
+                                isProgramDone = true;
                             };
                         }
                         break;
                     case "5":
                         Console.Clear();
-                        done = true;
+                        isProgramDone = true;
                         break;
                     default:
                         Console.WriteLine("Неизвестное значение ввода, пожалуйста, введите необходимую цифру для навигации по меню");
