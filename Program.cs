@@ -1,138 +1,168 @@
-namespace JuniorHomeWork
+﻿namespace JuniorHomeWork
 {
     internal class Program
     {
         static void Main(string[] args)
         {
-            float rub;
-            float usd;
-            float eur;
+            int moduleAlpha = 980;
+            int moduleBetta = 1050;
+            int moduleGamma = 450;
+
+            int userChoice;
             string userInput;
-            float currencyCount;
+            int sumOfServers = moduleAlpha + moduleBetta + moduleGamma;
 
-            float rubToUsd = 68.50f;
-            float rubToEur = 75.90f;
-            float usdToEur = 0.95f;
+            int passwordAlpha = 123456;
+            int passwordBetta = 123456;
+            int passwordGamma = 123456;
 
-            float usdToRub = 59.58f;
-            float eurToRub = 66.70f;
-            float eurToUsd = 1.04f;
+            Random random = new Random();
+            int errorsInAlpha = random.Next(0, 300);
+            int errorsInBetta = random.Next(0, 350);
+            int errorsInGamma = random.Next(0, 150);
 
-            Console.WriteLine("Приветствуем Вас в нашем обменнике валют, пожалуйста, введите количество рублей: ");
-            rub = Convert.ToSingle(Console.ReadLine());
-            Console.WriteLine("Пожалуйста, введите количество долларов: ");
-            usd = Convert.ToInt32(Console.ReadLine());
-            Console.WriteLine("Пожалуйста, введите количество евро: ");
-            eur = Convert.ToSingle(Console.ReadLine());
+            Console.WriteLine("Программа для управления оборудованием в дата центре, нажмите любую кнопку для продолжения");
+            Console.ReadKey();
+            Console.Clear();
 
-            Console.WriteLine("Выберите какая операция Вас интересует: ");
-            Console.WriteLine("1 - обмен рублей на доллары");
-            Console.WriteLine("2 - обмен рублей на евро");
-            Console.WriteLine("3 - обмен долларов на евро");
-            Console.WriteLine("4 - обмен долларов на рубли");
-            Console.WriteLine("5 - обмен евро на рубли");
-            Console.WriteLine("6 - обмен евро на доллары");
-
-            userInput = Console.ReadLine();
+            Console.SetCursorPosition(25, 4);
+            Console.WriteLine(" Меню : ");
+            Console.WriteLine("1 - Посмотреть количество серверных машин в модулях");
+            Console.WriteLine("2 - Изменить пароль на вход в модули");
+            Console.WriteLine("3 - Посмотреть количество ошибок серверов в модулях");
+            Console.WriteLine("4 - Изменить цвет фона программы");
+            userInput = Convert.ToString(Console.ReadLine());
 
             switch (userInput)
             {
                 case "1":
-                    Console.WriteLine("Обмен рублей на доллары");
-                    Console.WriteLine("Сколько рублей Вы хотите обменять ? ");
-                    currencyCount = Convert.ToSingle(Console.ReadLine());
+                    Console.Clear();
+                    Console.WriteLine("Общее количество серверных машин во всех модулях - " + sumOfServers);
+                    Console.WriteLine("Какой модуль Вас интересует ?");
+                    Console.WriteLine("1 - Альфа\n2 - Betta\n3 - Gamma");
+                    userChoice = Convert.ToInt32(Console.ReadLine());
 
-                    if (rub >= currencyCount)
+                    if (userChoice == 1)
                     {
-                        rub -= currencyCount; 
-                        usd += currencyCount / rubToUsd;
+                        Console.WriteLine("Количество серверных машин в модуле Альфа - " + moduleAlpha);
+                        Console.WriteLine("Чтобы вернуться назад нажмите - Esc");
                     }
-                    else
+                    else if (userChoice == 2)
                     {
-                        Console.WriteLine("Вы ввели некорректное количество рублей");
+                        Console.WriteLine("Количество серверных машин в модуле Бетта - " + moduleBetta);
+                    }
+                    else if (userChoice == 3)
+                    {
+                        Console.WriteLine("Количество серверных машин в модуле Бетта - " + moduleGamma);
                     }
                     break;
 
                 case "2":
-                    Console.WriteLine("Обмен рублей на евро");
-                    Console.WriteLine("Сколько рублей Вы хотите обменять ? ");
-                    currencyCount = Convert.ToSingle(Console.ReadLine());
+                    Console.WriteLine(" Установка пароля на вход в модули ");
+                    Console.WriteLine(" В каком модуле Вы хотите установить пароль на вход ? ");
+                    Console.WriteLine("1 - Альфа\n2 - Betta\n3 - Gamma");
+                    userChoice = Convert.ToInt32(Console.ReadLine());
 
-                    if (rub >= currencyCount)
+                    if (userChoice == 1)
                     {
-                        rub -= currencyCount;
-                        eur += currencyCount / rubToEur;
+                        Console.WriteLine("Введите текущий пароль: ");
+                        passwordAlpha = Convert.ToInt32(Console.ReadLine());
+                        if (passwordAlpha == 123456)
+                        {
+                            Console.WriteLine("Введите новый пароль: ");
+                            passwordAlpha = Convert.ToInt32(Console.ReadLine());
+                        }
+                        Console.WriteLine("Пароль изменен.");
+                    }
+                    else if (userChoice == 2)
+                    {
+                        Console.WriteLine("Введите текущий пароль: ");
+                        passwordBetta = Convert.ToInt32(Console.ReadLine());
+                        if (passwordBetta == 123456)
+                        {
+                            Console.WriteLine("Введите новый пароль: ");
+                            passwordBetta = Convert.ToInt32(Console.ReadLine());
+                        }
+                        Console.WriteLine("Пароль изменен.");
+                    }
+                    else if (userChoice == 3)
+                    {
+                        Console.WriteLine("Введите текущий пароль: ");
+                        passwordGamma = Convert.ToInt32(Console.ReadLine());
+                        if (passwordGamma == 123456)
+                        {
+                            Console.WriteLine("Введите новый пароль: ");
+                            passwordGamma = Convert.ToInt32(Console.ReadLine());
+                        }
+                        Console.WriteLine("Пароль изменен");
                     }
                     else
                     {
-                        Console.WriteLine("Вы ввели некорректное количество рублей");
+                        Console.WriteLine("Вы ввели некорректное значение");
                     }
                     break;
-
                 case "3":
-                    Console.WriteLine("Обмен долларов на евро");
-                    Console.WriteLine("Сколько долларов Вы хотите обменять ? ");
-                    currencyCount = Convert.ToSingle(Console.ReadLine());
-
-                    if (usd >= currencyCount)
+                    Console.WriteLine("Посмотреть количество ошибок серверов в модулях");
+                    Console.WriteLine("Какой модуль Вас интересует ?");
+                    Console.WriteLine("1 - Альфа\n2 - Betta\n3 - Gamma");
+                    userChoice = Convert.ToInt32(Console.ReadLine());
+                    if (userChoice == 1)
                     {
-                        usd -= currencyCount;
-                        eur += currencyCount / usdToEur;
+                        Console.WriteLine("Количество инцидентов в модуле Alpha - " + errorsInAlpha);
                     }
-                    else
+                    else if (userChoice == 2)
                     {
-                        Console.WriteLine("Вы ввели некорректное количество долларов");
+                        Console.WriteLine("Количество инцидентов в модуле Betta - " + errorsInBetta);
+                    }
+                    else if (userChoice == 3)
+                    {
+                        Console.WriteLine("Количество инцидентов в модуле Gamma - " + errorsInGamma);
                     }
                     break;
-
                 case "4":
-                    Console.WriteLine("Обмен долларов на рубли");
-                    Console.WriteLine("Сколько долларов Вы хотите обменять?");
-                    currencyCount = Convert.ToSingle(Console.ReadLine());
-
-                    if (usd >= currencyCount)
+                    Console.WriteLine("Изменение цвета фона программы. Какой цвет Вы хотите выбрать: ? ");
+                    Console.WriteLine("1-Красный\n2-Голубой\n3-Зеленый\n4-Желтый\n5-Белый");
+                    userChoice= Convert.ToInt32(Console.ReadLine());
+                    if (userChoice == 1)
                     {
-                        usd -= currencyCount;
-                        rub += currencyCount * usdToRub;
+                        Console.Clear();
+                        Console.BackgroundColor = ConsoleColor.Red;
+                        Console.Clear();
+                        Console.WriteLine("Цвет консоли изменен");
                     }
-                    else
+                    if (userChoice == 2)
                     {
-                        Console.WriteLine("Вы ввели некорректное количество долларов");
-
+                        Console.Clear();
+                        Console.BackgroundColor = ConsoleColor.Blue;
+                        Console.Clear();
+                        Console.WriteLine("Цвет консоли изменен");
+                    }
+                    if (userChoice == 3)
+                    {
+                        Console.Clear();
+                        Console.BackgroundColor = ConsoleColor.Green;
+                        Console.Clear();
+                        Console.WriteLine("Цвет консоли изменен");
+                    }
+                    if (userChoice == 4)
+                    {
+                        Console.Clear();
+                        Console.BackgroundColor = ConsoleColor.Yellow;
+                        Console.Clear();
+                        Console.WriteLine("Цвет консоли изменен");
+                    }
+                    if (userChoice == 5)
+                    {
+                        Console.Clear();
+                        Console.BackgroundColor = ConsoleColor.White;
+                        Console.Clear();
+                        Console.WriteLine("Цвет консоли изменен");
                     }
                     break;
-                case "5":
-                    Console.WriteLine("Обмен евро на рубли");
-                    Console.WriteLine("Сколько евро Вы хотите обменять?");
-                    currencyCount = Convert.ToSingle(Console.ReadLine());
-
-                    if (eur >= currencyCount)
-                    {
-                        eur -= currencyCount;
-                        rub += currencyCount * eurToRub;
-                    }
-                    else
-                    {
-                        Console.WriteLine("Вы ввели некорректное количество евро");
-                    }
-                    break;
-                case "6":
-                    Console.WriteLine("Обмен евро на доллары");
-                    Console.WriteLine("Сколько евро Вы хотите обменять");
-                    currencyCount = Convert.ToSingle(Console.ReadLine());
-
-                    if (eur >= currencyCount)
-                    {
-                        eur -= currencyCount;
-                        usd += currencyCount / eurToUsd;
-                    }
-                    else
-                    {
-                        Console.WriteLine("Вы ввели некорректное количество евро");
-                    }
+                default:
+                    Console.WriteLine("Неизвестное значение ввода, пожалуйста, введите необходимую цифру для навигации по меню");
                     break;
             }
-                    Console.WriteLine("На Вашем балансе: " + rub + " рублей, " + usd + " долларов и " + eur + " евро.");
             }
         }
     }
